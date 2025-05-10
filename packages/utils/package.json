@@ -1,6 +1,6 @@
 {
   "name": "@packages/utils",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "校验工具组",
   "author": "goldSilence <15615529635@163.com>",
   "homepage": "",
