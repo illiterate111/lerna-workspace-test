@@ -1,0 +1,30 @@
+{
+  "name": "@packages/utils",
+  "version": "0.0.1",
+  "description": "校验工具组",
+  "author": "goldSilence <15615529635@163.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && npm run build:cjs && npm run build:es",
+    "build:cjs": "tsc --outDir lib --module CommonJS",
+    "build:es": "tsc --outDir es --module ESNext",
+    "test": "jest"
+  }
+}

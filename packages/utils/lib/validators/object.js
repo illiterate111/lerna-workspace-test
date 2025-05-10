@@ -1,0 +1,36 @@
+"use strict";
+/**
+ * 对象校验工具
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hasAnyProperty = exports.hasAllProperties = exports.isEmptyObject = void 0;
+/**
+ * 检查对象是否为空（没有自己的可枚举属性）
+ * @param obj 要检查的对象
+ * @returns 如果对象为空，则返回true
+ */
+const isEmptyObject = (obj) => {
+    return obj && Object.keys(obj).length === 0;
+};
+exports.isEmptyObject = isEmptyObject;
+/**
+ * 检查对象是否包含指定的所有属性
+ * @param obj 要检查的对象
+ * @param props 需要检查的属性数组
+ * @returns 如果对象包含所有指定的属性，则返回true
+ */
+const hasAllProperties = (obj, props) => {
+    return props.every((prop) => Object.prototype.hasOwnProperty.call(obj, prop));
+};
+exports.hasAllProperties = hasAllProperties;
+/**
+ * 检查对象是否至少包含指定属性中的一个
+ * @param obj 要检查的对象
+ * @param props 需要检查的属性数组
+ * @returns 如果对象至少包含一个指定的属性，则返回true
+ */
+const hasAnyProperty = (obj, props) => {
+    return props.some((prop) => Object.prototype.hasOwnProperty.call(obj, prop));
+};
+exports.hasAnyProperty = hasAnyProperty;
+//# sourceMappingURL=object.js.map
